@@ -8,7 +8,6 @@ public class FormularioCine {
     private JPanel principal;
     private JComboBox cboPelicula;
     private JComboBox cboCantidad;
-    
     private JButton cboComprar;
     //private JTextArea txtEntradas;
     private JButton btnPelicula1;
@@ -37,7 +36,7 @@ public class FormularioCine {
                 if(cboPelicula.getSelectedItem().equals("XMEN")){
                     try{
                         sala1.encolar((String) cboPelicula.getSelectedItem(), Integer.parseInt((String) cboCantidad.getSelectedItem()));
-                        JOptionPane.showMessageDialog(null, "Boletos disponibles para XMEM \t" + sala1.entradasDisponibles());
+                        JOptionPane.showMessageDialog(null, "Aforo para XMEM: \t" + sala1.entradasDisponibles()+" Personas");
                     }catch (Exception ex){
                         JOptionPane.showMessageDialog(null, ex.getMessage());
                     }
@@ -45,8 +44,7 @@ public class FormularioCine {
                 else
                     try{
                         sala2.encolar((String) cboPelicula.getSelectedItem(), Integer.parseInt((String) cboCantidad.getSelectedItem()));
-                        JOptionPane.showMessageDialog(null, "Boletos disponibles para MARIO \t" +
-                                "" + sala2.entradasDisponibles());
+                        JOptionPane.showMessageDialog(null, "Aforo para MARIO: \t"  + sala2.entradasDisponibles()+" Personas");
                     }catch (Exception ex){
                         JOptionPane.showMessageDialog(null, ex.getMessage());
                     }
@@ -81,6 +79,9 @@ public class FormularioCine {
         cboCantidad.setSelectedItem("");
 
     }
+
+
+
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("FormularioCine");
